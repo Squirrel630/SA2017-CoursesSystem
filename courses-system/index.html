@@ -1,0 +1,95 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <meta charset="UTF-8">  
+    <title>SA2017选课管理</title>  
+    <link rel="stylesheet" type="text/css" href="jquery-ui-1.12.1/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="dist/bootstrap-float-label.css"/> 
+    <link rel="stylesheet" type="text/css" href="css/index.css">                 
+    <script src="src/jquery-1.12.3.min.js"></script>  
+    <script src="jquery-ui-1.12.1/jquery-ui.js"></script>  
+    <script type="text/javascript" src="js/operation.js"></script>
+</head>  
+<body>  
+  
+<div class="demo">  
+  
+<div id="dialog-form" title="添加/更新学生" >  
+    <form >  
+    <fieldset> 
+        <div style="margin-top: 20px;">  
+             <label for="stu-number">学号</label>  
+             <input type="text" name="stu-number" id="stu-number" class="text" /> 
+        </div> 
+        <div>
+        <label for="name">姓名</label>  
+        <input type="text" name="name" id="name" value="" class="text" />
+        </div>
+        <div>
+        <label for="department">专业</label>  
+        <input type="department" name="department" id="department" value="" class="text" /> 
+        </div>
+        <div> 
+        <label for="total">....</label>
+        <input type="total" name="total" id="total" value="" class="text">
+        </div>
+        <input type="hidden" name="rowindex" id="rowindex" value=""/>  
+    </fieldset>  
+    </form>  
+</div>  
+  
+<div id="dialog-import" title="导入Excel文件">   
+    <div style="margin-top: 20px;" align="center">
+        <form id="uploadForm" enctype="multipart/form-data">
+            <input id="file" type="file" name="filename"/>
+        </form>
+    </div> 
+</div>
+
+<div id="dialog-grade" title="修改成绩">
+    <form>
+    <fieldset align="center">
+        <div style="margin-top: 20px;">
+            <label for="usual">平时</label>
+            <input type="text" name="usual" id="usual" class="text" /> 
+        </div>
+        <label for="design">大作业</label>
+        <input type="text" name="design" id="design" class="text" /> 
+        <label for="exam">期末</label>
+        <input type="text" name="exam" id="exam" class="text" /> 
+        <label> 总评<自动计算> </label>
+    </fieldset>
+    </form>
+</div>
+  
+<div id="users-contain">  
+    <h1 class="title">SA2017选课管理</h1> 
+    <button id="create-user">添加</button>  
+    <button id="import">导入</button>
+    <table id="users">  
+        <thead>  
+            <tr class="ui-widget-header "> 
+                <th>学号</th> 
+                <th>姓名</th>  
+                <th>专业</th>  
+                <th>...</th>
+                <th style="width:18em;">操作</th>  
+            </tr>  
+        </thead>  
+        <tbody id="students">  
+        </tbody>  
+    </table> 
+    <div id="page-helper">
+        <div>
+        <button class="lastPage"> 上一页 </button>
+        <button class="nextPage"> 下一页 </button>
+        </div>
+    </div> 
+</div>  
+
+  
+</div><!-- End demo -->  
+<div id="debug">  
+</div>  
+</body>  
+</html>  
