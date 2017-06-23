@@ -45,7 +45,18 @@
                     student.usual_grade = "0";
                     student.design_grade = "0";
                     student.exam_grade = "0";
- 
+                    student_list.add(student)
+
+                    $( "#users tbody" ).append( "<tr>" +
+                        "<td>" + student.id + "</td>" +
+                        "<td>" + student.studentname + "</td>" +
+                        "<td>" + student.department + "</td>" +
+                        "<td>" + student.grade + "</td>" +
+                        '<td><button class="EditButton">修改</button><button class="DeleteButton">删除</button><button class="GradeButton">成绩</button></td>'+
+                        "</tr>" );
+               //     student_list = res.list;
+                    createData(student_list);
+
                     if (rowindex.val()==""){//新增 
                           $.ajax({
                             url: 'http://localhost:9000/students/add',
@@ -284,9 +295,9 @@
         .button()  
         .click(function() {  
                 //清空表单域  
-                allFields.each(function(idx){  
-                    this.value="";  
-                });  
+                // allFields.each(function(idx){
+                //     this.value="";
+                // });
                 $( "#dialog-form" ).dialog( "open" );  
             });  
 
